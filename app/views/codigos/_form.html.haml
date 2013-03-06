@@ -1,0 +1,11 @@
+= form_for(@codigo) do |f|
+  - if @codigo.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@codigo.errors.count, "error")
+        prohibited this codigo from being saved:
+      %ul
+        - @codigo.errors.full_messages.each do |msg|
+          %li= msg
+  .actions
+    = f.submit

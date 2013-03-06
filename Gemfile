@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "haml-rails"
 
 gem 'rqrcode-rails3'
 gem 'mini_magick'

@@ -1,0 +1,13 @@
+%h1 Listing codigos
+%table
+  %tr
+    %th
+    %th
+    %th
+  - @codigos.each do |codigo|
+    %tr
+      %td= link_to 'Show', codigo
+      %td= link_to 'Edit', edit_codigo_path(codigo)
+      %td= link_to 'Destroy', codigo, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Codigo', new_codigo_path
