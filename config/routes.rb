@@ -1,4 +1,8 @@
 QrServer::Application.routes.draw do
+  get "home/index"
+
+  devise_for :users
+
   resources :codigos
 
   # The priority is based upon order of creation:
@@ -52,7 +56,7 @@ QrServer::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
 
-  root :to => 'codigos#index'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
