@@ -7,6 +7,11 @@ gem 'rails', '3.2.8'
 
 gem 'mysql2'
 
+gem "mongoid"
+gem "bson_ext"
+
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,6 +27,7 @@ end
 
 gem 'jquery-rails'
 gem "haml-rails"
+gem 'bootstrap-sass'
 
 gem 'rqrcode-rails3'
 gem 'mini_magick'
