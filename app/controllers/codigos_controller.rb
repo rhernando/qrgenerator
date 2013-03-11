@@ -47,6 +47,7 @@ class CodigosController < ApplicationController
   # POST /codigos
   # POST /codigos.json
   def create
+    debugger
     @codigo = Codigo.new(params[:codigo])
 
     respond_to do |format|

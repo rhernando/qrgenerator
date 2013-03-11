@@ -10,6 +10,7 @@ gem 'mysql2'
 gem "mongoid"
 gem "bson_ext"
 
+gem "carrierwave-mongoid"
 gem 'carrierwave'
 gem 'mini_magick'
 
@@ -47,3 +48,9 @@ gem 'devise'
 
 # To use debugger
 # gem 'debugger'
+
+group :development do
+  gem 'linecache19', '0.5.13'
+  gem 'ruby-debug-base19', "> 0.11.25"
+  gem 'ruby-debug19', :require => 'ruby-debug'
+end
