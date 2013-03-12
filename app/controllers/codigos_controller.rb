@@ -16,6 +16,10 @@ class CodigosController < ApplicationController
     @codigo = Codigo.find(params[:id])
     qr = RQRCode::QRCode.new('my string to generate', :size => 4, :level => :h)
 
+
+
+
+
     logger.info qr.to_s
     respond_to do |format|
       format.html # show.html.erb
@@ -85,6 +89,10 @@ class CodigosController < ApplicationController
   # DELETE /codigos/1.json
   def destroy
     @codigo = Codigo.find(params[:id])
+
+    grid_fs = Mongoid::GridFs
+    g = grid_fs.delete(@codigo.idfichero)
+
     @codigo.destroy
 
     respond_to do |format|
