@@ -14,17 +14,17 @@ class CodigosController < ApplicationController
   # GET /codigos/1.json
   def show
     @codigo = Codigo.find(params[:id])
-    qr = RQRCode::QRCode.new( 'my string to generate', :size => 4, :level => :h )
+    qr = RQRCode::QRCode.new('my string to generate', :size => 4, :level => :h)
 
     logger.info qr.to_s
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @codigo }
       format.html
-      format.svg  { render :qrcode => request.url, :level => :l, :unit => 10 }
-      format.png  { render :qrcode => request.url }
-      format.gif  { render :qrcode => request.url }
-      format.jpeg { render :qrcode => 'my string to generate'}
+      format.svg { render :qrcode => request.url, :level => :l, :unit => 10 }
+      format.png { render :qrcode => request.url }
+      format.gif { render :qrcode => request.url }
+      format.jpeg { render :qrcode => 'my string to generate' }
     end
   end
 
@@ -47,8 +47,12 @@ class CodigosController < ApplicationController
   # POST /codigos
   # POST /codigos.json
   def create
-    debugger
     @codigo = Codigo.new(params[:codigo])
+
+    grid_fs = Mongoid::GridFs
+    g = grid_fs.put(params[:image_form][:upload_data])
+
+    @codigo.idfichero = g.id.to_s
 
     respond_to do |format|
       if @codigo.save
@@ -87,5 +91,15 @@ class CodigosController < ApplicationController
       format.html { redirect_to codigos_url }
       format.json { head :no_content }
     end
+  end
+
+  def showimage
+
+    grid_fs = Mongoid::GridFs
+    file = grid_fs.get(Codigo.find(params[:id]).idfichero)
+
+    send_data file.data, :type => file.contentType, :disposition => 'inline'
+
+
   end
 end

@@ -13,6 +13,7 @@ gem "bson_ext"
 gem "carrierwave-mongoid"
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'mongoid-grid_fs'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,7 +32,6 @@ gem "haml-rails"
 gem 'bootstrap-sass'
 
 gem 'rqrcode-rails3'
-gem 'mini_magick'
 
 gem 'devise'
 # To use ActiveModel has_secure_password

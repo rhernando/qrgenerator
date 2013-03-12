@@ -172,6 +172,7 @@ DEPENDENCIES
   linecache19 (= 0.5.13)
   mini_magick
   mongoid
+  mongoid-grid_fs
   mysql2
   rails (= 3.2.8)
   rqrcode-rails3

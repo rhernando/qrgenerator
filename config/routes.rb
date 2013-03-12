@@ -5,7 +5,7 @@ QrServer::Application.routes.draw do
 
   resources :codigos
 
-  match "/images/uploads/*path" => "gridfs#serve"
+  match "/imageuploaded/:id" => "codigos#showimage", :as => :imageuploaded
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
