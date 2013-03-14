@@ -70,6 +70,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rqrcode (v0.4.2, RVM: ruby-1.9.3-p286) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rqrcode-rails3 (v0.1.6, RVM: ruby-1.9.3-p286) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-debug-base19 (v0.11.26, RVM: ruby-1.9.3-p286) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby-debug19 (v0.11.6, RVM: ruby-1.9.3-p286) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby_core_source (v0.1.5, RVM: ruby-1.9.3-p286) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.2.7, RVM: ruby-1.9.3-p286) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v3.2.6, RVM: ruby-1.9.3-p286) [gem]" level="application" />

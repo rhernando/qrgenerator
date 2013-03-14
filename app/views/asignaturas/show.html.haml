@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Curso:
+  = @asignatura.curso
+%p
+  %b Nombre:
+  = @asignatura.nombre
+%p
+  %b Titulo:
+  = @asignatura.titulo
+
+= link_to 'Edit', edit_asignatura_path(@asignatura)
+\|
+= link_to 'Back', asignaturas_path

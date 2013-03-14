@@ -14,21 +14,19 @@ class CodigosController < ApplicationController
   # GET /codigos/1.json
   def show
     @codigo = Codigo.find(params[:id])
-    qr = RQRCode::QRCode.new('my string to generate', :size => 4, :level => :h)
 
+    grid_fs = Mongoid::GridFs
+    file = grid_fs.get(Codigo.find(params[:id]).idfichero)
+    valor_codigo = "#{@codigo.id}|#{file.contentType}"
 
-
-
-
-    logger.info qr.to_s
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @codigo }
       format.html
-      format.svg { render :qrcode => request.url, :level => :l, :unit => 10 }
-      format.png { render :qrcode => request.url }
-      format.gif { render :qrcode => request.url }
-      format.jpeg { render :qrcode => 'my string to generate' }
+      format.svg { render :qrcode => valor_codigo, :level => :l, :unit => 10 }
+      format.png { render :qrcode => valor_codigo }
+      format.gif { render :qrcode => valor_codigo }
+      format.jpeg { render :qrcode => valor_codigo }
     end
   end
 

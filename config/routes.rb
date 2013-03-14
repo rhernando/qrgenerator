@@ -1,4 +1,6 @@
 QrServer::Application.routes.draw do
+  resources :asignaturas
+
   get "home/index"
 
   devise_for :users
