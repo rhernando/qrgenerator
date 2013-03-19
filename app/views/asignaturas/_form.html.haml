@@ -1,4 +1,4 @@
-= form_for @asignatura do |f|
+= form_for @asignatura, :class => "form-horizontal" do |f|
   - if @asignatura.errors.any?
     #error_explanation
       %h2= "#{pluralize(@asignatura.errors.count, "error")} prohibited this asignatura from being saved:"
@@ -6,14 +6,15 @@
         - @asignatura.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :curso
-    = f.number_field :curso
-  .field
-    = f.label :nombre
-    = f.text_field :nombre
-  .field
-    = f.label :titulo
-    = f.text_field :titulo
-  .actions
-    = f.submit 'Save'
+  .control-group
+    .field
+      = f.label :curso
+      = f.select :curso, options_for_select(1..5, @asignatura.curso)
+    .field
+      = f.label :nombre
+      = f.text_field :nombre
+    .field
+      = f.label :titulo
+      = f.select :titulo, options_for_select(titulos_form, @asignatura.titulo)
+    .actions
+      = f.submit 'Save'
