@@ -11,4 +11,6 @@
 
 class Codigo < ActiveRecord::Base
   # attr_accessible :title, :body
+
+  belongs_to :asignatura
 end

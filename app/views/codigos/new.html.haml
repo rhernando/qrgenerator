@@ -3,6 +3,9 @@
 = form_for :image_form, :url => { :controller => "codigos", :action => :create }, :html => { :method => :post, :id => 'uploadForm', :multipart => true , :remote => true} do |f|
   %p
     = f.file_field :upload_data
+  %p
+    = label_tag :asignatura
+    = options_from_collection_for_select(@asignaturas, :id, :nombre)
 
   %p
     = submit_tag 'Subir fichero', :class => 'btn btn-primary'

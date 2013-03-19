@@ -34,6 +34,7 @@ class CodigosController < ApplicationController
   # GET /codigos/new.json
   def new
     @codigo = Codigo.new
+    @asignaturas = Asignatura.all
 
     respond_to do |format|
       format.html # new.html.erb

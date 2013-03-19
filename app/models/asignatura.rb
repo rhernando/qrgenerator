@@ -13,5 +13,7 @@
 class Asignatura < ActiveRecord::Base
   attr_accessible :curso, :nombre, :titulo
 
+  has_many :codigos
+
   TITULOS = %w(ing_informatica ing_teleco mates_informatica master_i2tic master_inform doctorado)
 end
