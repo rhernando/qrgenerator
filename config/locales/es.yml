@@ -17,3 +17,10 @@ es:
     no_instrucciones_conf: "¿No has recibido las instrucciones para confirmar?"
     no_instrucciones_unblock: "¿No has recibido las instrucciones para desbloquear?"
     remember: "No cerrar sesión"
+  asignaturas:
+    ing_informatica: "Ingeniería Informática"
+    ing_teleco: "Ingeniería de Tecnologías y Servicios de Telecomunicación"
+    mates_informatica: "Ingeniería Informática y Matemáticas"
+    master_i2tic: "Máster Universitario en Investigación e Innovación en TIC (I2-TIC)"
+    master_inform: "Máster Universitario en Ingeniería Informática"
+    doctorado: "Doctorado en Ingeniería Informática y de Telecomunicación"
