@@ -1,14 +1,14 @@
-%p#notice= notice
-
+%h2
+  = @asignatura.nombre
 %p
   %b Curso:
   = @asignatura.curso
 %p
-  %b Nombre:
-  = @asignatura.nombre
+  %b Código:
+  = @asignatura.code
 %p
   %b Titulo:
-  = @asignatura.titulo
+  = I18n.t("asignaturas.#{@asignatura.titulo}")
 
 = link_to 'Edit', edit_asignatura_path(@asignatura)
 \|

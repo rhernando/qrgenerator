@@ -8,10 +8,11 @@
 #  titulo     :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  code       :string(255)
 #
 
 class Asignatura < ActiveRecord::Base
-  attr_accessible :curso, :nombre, :titulo
+  attr_accessible :curso, :nombre, :titulo, :code
 
   has_many :codigos
 
