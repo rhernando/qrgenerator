@@ -24,3 +24,6 @@ es:
     master_i2tic: "Máster Universitario en Investigación e Innovación en TIC (I2-TIC)"
     master_inform: "Máster Universitario en Ingeniería Informática"
     doctorado: "Doctorado en Ingeniería Informática y de Telecomunicación"
+  codigos:
+    form:
+      asign_ph: "Busca una asignatura"

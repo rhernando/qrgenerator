@@ -5,10 +5,17 @@
     = f.file_field :upload_data
   %p
     = label_tag :asignatura
-    = options_from_collection_for_select(@asignaturas, :id, :nombre)
+    = text_field_tag :asignatura, nil, :clas => 'typeahead', :placeholder => I18n.t('codigos.form.asign_ph')
+    =# select_tag :asignatura, options_from_collection_for_select(@asignaturas, :id, :nombre)
 
   %p
     = submit_tag 'Subir fichero', :class => 'btn btn-primary'
 
 
 = link_to 'Back', codigos_path
+
+
+:javascript
+  //var autocomplete_items = #{ @asignaturas.to_json };
+  var data = #{asignaturas_categorias(@asignaturas)};
+  $('#asignatura').catcomplete({delay: 0, source: data});

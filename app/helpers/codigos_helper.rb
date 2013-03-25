@@ -6,4 +6,12 @@ module CodigosHelper
     grid_fs.get(id) rescue nil
   end
 
+  def asignaturas_categorias(arr_asignaturas)
+    array_cat = []
+    arr_asignaturas.each do |as|
+      h_n = {:label => as.nombre, :category => I18n.t("asignaturas.#{as.titulo}")}
+      array_cat << h_n
+    end
+    array_cat.to_json
+  end
 end
