@@ -14,10 +14,13 @@
       = f.label :nombre
       = f.text_field :nombre
     .field
-      = f.label :code
+      = f.label :code, "Código"
       = f.text_field :code
     .field
-      = f.label :titulo
+      = f.label :titulo, "Título"
       = f.select :titulo, options_for_select(titulos_form, @asignatura.titulo)
+    .field
+      = f.label :descripcion, "Descripción"
+      = f.text_area :descripcion, :style => 'width:500px;height:100px;'
     .actions
-      = f.submit 'Save'
+      = f.submit 'Guardar', :class => 'btn btn-success btn-large'

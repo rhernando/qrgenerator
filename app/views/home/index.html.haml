@@ -1,6 +1,7 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+%h1 Inicio
+%p <strong>A</strong>ugmented <strong>R</strong>eality and <strong>Q</strong>r-codes <strong>E</strong>-<strong>L</strong>earning
 
 %p
-  = link_to 'codigos', codigos_path
-  = link_to 'asignaturas', asignaturas_path
+  = link_to t('home.asignat'), asignaturas_path, :class => 'btn btn-large btn-info'
+%p
+  = link_to t('home.codes'), codigos_path, :class => 'btn btn-large btn-inverse'

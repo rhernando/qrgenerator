@@ -1,23 +1,24 @@
-%h1 Listing asignaturas
+%h1 Listado de Asignaturas
 
-%table
+%table.table.table-striped.table-bordered
   %tr
-    %th Curso
     %th Nombre
     %th Titulo
-    %th
-    %th
+    %th Curso
     %th
 
   - @asignaturas.each do |asignatura|
     %tr
+      %td
+        %strong= asignatura.nombre
+        = "(#{asignatura.code})" if asignatura.code.present?
+      %td= t("asignaturas.#{asignatura.titulo}")
       %td= asignatura.curso
-      %td= asignatura.nombre
-      %td= asignatura.titulo
-      %td= link_to 'Show', asignatura
-      %td= link_to 'Edit', edit_asignatura_path(asignatura)
-      %td= link_to 'Destroy', asignatura, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td
+        = link_to 'Ver', asignatura, :class => 'btn btn-info'
+        = link_to 'Editar', edit_asignatura_path(asignatura), :class => 'btn btn-inverse'
+        = link_to 'Eliminar', asignatura, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-danger'
 
 %br
 
-= link_to 'New Asignatura', new_asignatura_path
+= link_to 'Nueva Asignatura', new_asignatura_path, :class => 'btn btn-large'

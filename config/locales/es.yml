@@ -27,3 +27,6 @@ es:
   codigos:
     form:
       asign_ph: "Busca una asignatura"
+  home:
+    asignat: "Gestión de asignaturas"
+    codes: "Ver y gestionar recursos"

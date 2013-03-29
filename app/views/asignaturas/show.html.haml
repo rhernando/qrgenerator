@@ -1,15 +1,18 @@
 %h2
   = @asignatura.nombre
 %p
-  %b Curso:
-  = @asignatura.curso
-%p
   %b Código:
   = @asignatura.code
 %p
   %b Titulo:
   = I18n.t("asignaturas.#{@asignatura.titulo}")
+%p
+  %b Curso:
+  = @asignatura.curso
+%p
+  %b Descripción:
+  = @asignatura.descripcion
 
-= link_to 'Edit', edit_asignatura_path(@asignatura)
+= link_to 'Editar', edit_asignatura_path(@asignatura), :class => 'btn btn-inverse'
 \|
-= link_to 'Back', asignaturas_path
+= link_to 'Atrás', asignaturas_path, :class => 'btn btn-link'

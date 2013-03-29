@@ -1,4 +1,6 @@
 class CodigosController < ApplicationController
+  skip_before_filter :authenticate_user!, :only => :showimage
+
   # GET /codigos
   # GET /codigos.json
   def index

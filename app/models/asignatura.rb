@@ -12,6 +12,9 @@
 #
 
 class Asignatura < ActiveRecord::Base
+  validates_presence_of :nombre
+  validates_presence_of :titulo
+
   attr_accessible :curso, :nombre, :titulo, :code
 
   has_many :codigos
