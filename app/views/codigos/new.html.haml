@@ -1,18 +1,24 @@
-%h1 New codigo
+%h1 Nuevo código
 =# render 'form'
 = form_for :image_form, :url => { :controller => "codigos", :action => :create }, :html => { :method => :post, :id => 'uploadForm', :multipart => true , :remote => true} do |f|
   %p
-    = f.file_field :upload_data
+    = label_tag :tipo, "Tipo de recurso"
+    = select_tag :tipo,  options_for_select(Codigo::TIPOS)
   %p
     = label_tag :asignatura
     = text_field_tag :asignatura, nil, :clas => 'typeahead', :placeholder => I18n.t('codigos.form.asign_ph')
-    =# select_tag :asignatura, options_from_collection_for_select(@asignaturas, :id, :nombre)
+  %p
+    = label_tag :recurso
+    = f.file_field :upload_data
+  .field
+    = f.label :informacion, "Información"
+    = f.text_area :informacion, :style => 'width:500px;height:100px;'
 
   %p
-    = submit_tag 'Subir fichero', :class => 'btn btn-primary'
+    = submit_tag 'Guardar', :class => 'btn btn-success btn-large'
 
 
-= link_to 'Back', codigos_path
+= link_to 'Atrás', codigos_path, :class => 'btn btn-link'
 
 
 :javascript

@@ -13,5 +13,6 @@
 class Codigo < ActiveRecord::Base
   # attr_accessible :title, :body
 
+  TIPOS = %w(imagen informacion video)
   belongs_to :asignatura
 end
