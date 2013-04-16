@@ -1,18 +1,24 @@
 %h1 Listado de códigos
 %table.table.table-striped.table-bordered
   %tr
+    %th Asignatura
     %th Recurso
     %th QR Code
     %th
   - @codigos.each do |codigo|
     %tr
+      - as = codigo.asignatura || Asignatura.first
+      - name = as.nombre
+      - name += " (#{as.code})" if as.code.present?
+
+      %td= name
       %td= image_tag imageuploaded_path(codigo.id), :width => 150
       %td= image_tag codigo_path(codigo, :format => 'jpg'), :width => 100
 
       %td
-        = link_to 'Show', codigo, :class => 'btn btn-info'
-        = link_to 'Edit', edit_codigo_path(codigo), :class => 'btn btn-inverse'
-        = link_to 'Destroy', codigo, method: :delete, data: { confirm: 'Eliminar?' }, :class => 'btn btn-danger'
+        = link_to 'Ver', codigo, :class => 'btn btn-info'
+        = link_to 'Editar', edit_codigo_path(codigo), :class => 'btn btn-inverse'
+        = link_to 'Eliminar', codigo, method: :delete, data: { confirm: 'Eliminar?' }, :class => 'btn btn-danger'
 %br/
 
-= link_to 'Nuevo Código', new_codigo_path, :class => 'btn btn-large'
+= link_to 'Nuevo Recurso', new_codigo_path, :class => 'btn btn-large'

@@ -5,11 +5,11 @@
     = label_tag :tipo, "Tipo de recurso"
     = select_tag :tipo,  options_for_select(Codigo::TIPOS)
   %p
-    = label_tag :asignatura
-    = text_field_tag :asignatura, nil, :clas => 'typeahead', :placeholder => I18n.t('codigos.form.asign_ph')
-  %p
     = label_tag :recurso
     = f.file_field :upload_data
+  %p
+    = label_tag :asignatura
+    = text_field_tag :asignatura, nil, :clas => 'typeahead', :placeholder => I18n.t('codigos.form.asign_ph')
   .field
     = f.label :informacion, "Información"
     = f.text_area :informacion, :style => 'width:500px;height:100px;'
