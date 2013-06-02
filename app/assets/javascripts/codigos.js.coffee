@@ -3,11 +3,13 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $.widget "custom.catcomplete", $.ui.autocomplete,
-         _renderMenu: (ul, items) ->
-           that = this
-           currentCategory = ""
-           $.each items, (index, item) ->
-             unless item.category is currentCategory
-               ul.append "<li class='ui-autocomplete-category'>" + item.category + "</li>"
-               currentCategory = item.category
-             that._renderItemData ul, item
+  _renderMenu: (ul, items) ->
+    that = this
+    currentCategory = ""
+    $.each items, (index, item) ->
+      unless item.category is currentCategory
+        ul.append "<li class='ui-autocomplete-category'>" + item.category + "</li>"
+        currentCategory = item.category
+      that._renderItemData ul, item
+
+

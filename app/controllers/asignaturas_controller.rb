@@ -44,7 +44,7 @@ class AsignaturasController < ApplicationController
 
     respond_to do |format|
       if @asignatura.save
-        format.html { redirect_to @asignatura, notice: 'Asignatura was successfully created.' }
+        format.html { redirect_to asignaturas_path, notice: 'Asignatura was successfully created.' }
         format.json { render json: @asignatura, status: :created, location: @asignatura }
       else
         format.html { render action: "new" }

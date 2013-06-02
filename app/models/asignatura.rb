@@ -2,13 +2,14 @@
 #
 # Table name: asignaturas
 #
-#  id         :integer          not null, primary key
-#  curso      :integer
-#  nombre     :string(255)
-#  titulo     :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  code       :string(255)
+#  id          :integer          not null, primary key
+#  curso       :integer
+#  nombre      :string(255)
+#  titulo      :string(255)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  code        :string(255)
+#  descripcion :string(255)
 #
 
 class Asignatura < ActiveRecord::Base

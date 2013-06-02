@@ -1,6 +1,10 @@
 class CodigosController < ApplicationController
   skip_before_filter :authenticate_user!, :only => :showimage
 
+  TIPO_INFO = 'informacion'
+  TIPO_IMG = 'imagen'
+  TIPO_VIDEO = 'video'
+
   # GET /codigos
   # GET /codigos.json
   def index
@@ -18,8 +22,12 @@ class CodigosController < ApplicationController
     @codigo = Codigo.find(params[:id])
 
     grid_fs = Mongoid::GridFs
-    file = grid_fs.get(Codigo.find(params[:id]).idfichero)
-    valor_codigo = "#{@codigo.id}|#{file.contentType}"
+    file = grid_fs.get(Codigo.find(params[:id]).idfichero) rescue nil
+    if @codigo.tipo == TIPO_INFO
+      valor_codigo = "ARQEL|#{@codigo.id}|#{@codigo.tipo}|INFO"
+    else
+      valor_codigo = "ARQEL|#{@codigo.id}|#{file.contentType}"
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -52,12 +60,18 @@ class CodigosController < ApplicationController
   # POST /codigos
   # POST /codigos.json
   def create
+    tipo = params[:tipo]
     @codigo = Codigo.new(params[:codigo])
+    @codigo.tipo = tipo
+    @codigo.asignatura_id = params[:idasignatura]
 
-    grid_fs = Mongoid::GridFs
-    g = grid_fs.put(params[:image_form][:upload_data])
-
-    @codigo.idfichero = g.id.to_s
+    if tipo != TIPO_INFO
+      grid_fs = Mongoid::GridFs
+      g = grid_fs.put(params[:image_form][:upload_data])
+      @codigo.idfichero = g.id.to_s
+    else
+      @codigo.informacion = params[:image_form][:informacion]
+    end
 
     respond_to do |format|
       if @codigo.save
@@ -110,6 +124,11 @@ class CodigosController < ApplicationController
     send_data file.data, :type => file.contentType, :disposition => 'inline'
 
 
+  end
+
+
+  def info_codigo
+    Codigo.find(params[:id])
   end
 
 

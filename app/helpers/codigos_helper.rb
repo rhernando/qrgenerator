@@ -11,7 +11,7 @@ module CodigosHelper
     arr_asignaturas.each do |as|
       name = as.nombre
       name += " (#{as.code})" if as.code.present?
-      h_n = {:label => name, :category => I18n.t("asignaturas.#{as.titulo}")}
+      h_n = {:label => name, :value => name, :id => "#{as.id}", :category => I18n.t("asignaturas.#{as.titulo}")}
       array_cat << h_n
     end
     array_cat.to_json

@@ -8,6 +8,7 @@
 #  idfichero     :string(255)
 #  tipo          :string(255)
 #  asignatura_id :integer
+#  informacion   :text
 #
 
 class Codigo < ActiveRecord::Base
