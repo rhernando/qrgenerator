@@ -1,5 +1,5 @@
 class CodigosController < ApplicationController
-  skip_before_filter :authenticate_user!, :only => :showimage
+  skip_before_filter :authenticate_user!, :only => [:showimage, :info_codigo]
 
   TIPO_INFO = 'informacion'
   TIPO_IMG = 'imagen'
@@ -26,7 +26,7 @@ class CodigosController < ApplicationController
     if @codigo.tipo == TIPO_INFO
       valor_codigo = "ARQEL|#{@codigo.id}|#{@codigo.tipo}|INFO"
     else
-      valor_codigo = "ARQEL|#{@codigo.id}|#{file.contentType}"
+      valor_codigo = "ARQEL|#{@codigo.id}|#{@codigo.tipo}|#{file.contentType}"
     end
 
     respond_to do |format|
@@ -126,9 +126,23 @@ class CodigosController < ApplicationController
 
   end
 
-
+  ## PARAMS... {"id"=>"27", "arr_asign"=>"4-0,4-2,4-1"}
   def info_codigo
-    Codigo.find(params[:id])
+    #c = Codigo.find(params[:id])
+    cods = Codigo.where(:tipo => TIPO_INFO)
+    messages = []
+
+    cods.each do |c|
+      # todo comprobar asignatura
+      messages << {:asignatura => c.asignatura.nombre, :texto => c.informacion}
+    end
+    arr_assign = params[:id]
+
+    p messages
+    respond_to do |format|
+      format.json { render json: messages, status: :ok }
+    end
+
   end
 
 

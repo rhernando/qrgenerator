@@ -8,6 +8,7 @@ QrServer::Application.routes.draw do
   resources :codigos
 
   match "/imageuploaded/:id" => "codigos#showimage", :as => :imageuploaded
+  match "/infocodigo/:id/asign/:arr_asign" => "codigos#info_codigo", :as => :info_codigo
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
