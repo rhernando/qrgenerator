@@ -1,4 +1,5 @@
 QrServer::Application.routes.draw do
+  get "asignaturas/array_asignatura"
   resources :asignaturas
 
   get "home/index"
@@ -9,6 +10,7 @@ QrServer::Application.routes.draw do
 
   match "/imageuploaded/:id" => "codigos#showimage", :as => :imageuploaded
   match "/infocodigo/:id/asign/:arr_asign" => "codigos#info_codigo", :as => :info_codigo
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

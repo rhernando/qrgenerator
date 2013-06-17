@@ -12,7 +12,9 @@
       - name += " (#{as.code})" if as.code.present?
 
       %td= name
-      %td= image_tag imageuploaded_path(codigo.id), :width => 150  if codigo.tipo != CodigosController::TIPO_INFO
+      %td
+        = image_tag imageuploaded_path(codigo.id), :width => 150  if codigo.tipo == CodigosController::TIPO_IMG
+        = codigo.tipo if codigo.tipo != CodigosController::TIPO_IMG
       %td= image_tag codigo_path(codigo, :format => 'jpg'), :width => 100
 
       %td

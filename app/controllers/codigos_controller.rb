@@ -26,7 +26,7 @@ class CodigosController < ApplicationController
     if @codigo.tipo == TIPO_INFO
       valor_codigo = "ARQEL|#{@codigo.id}|#{@codigo.tipo}|INFO"
     else
-      valor_codigo = "ARQEL|#{@codigo.id}|#{@codigo.tipo}|#{file.contentType}"
+      valor_codigo = "ARQEL|#{@codigo.id}|#{@codigo.tipo}|#{file.contentType}|#{@codigo.filename}"
     end
 
     respond_to do |format|
@@ -69,13 +69,14 @@ class CodigosController < ApplicationController
       grid_fs = Mongoid::GridFs
       g = grid_fs.put(params[:image_form][:upload_data])
       @codigo.idfichero = g.id.to_s
+      @codigo.filename = params[:image_form][:upload_data].original_filename
     else
       @codigo.informacion = params[:image_form][:informacion]
     end
 
     respond_to do |format|
       if @codigo.save
-        format.html { redirect_to @codigo, notice: 'Codigo was successfully created.' }
+        format.html { redirect_to codigos_path, notice: 'Codigo was successfully created.' }
         format.json { render json: @codigo, status: :created, location: @codigo }
       else
         format.html { render action: "new" }
@@ -121,24 +122,37 @@ class CodigosController < ApplicationController
     grid_fs = Mongoid::GridFs
     file = grid_fs.get(Codigo.find(params[:id]).idfichero)
 
-    send_data file.data, :type => file.contentType, :disposition => 'inline'
 
+    p file.inspect
 
+    send_data file.data, :type => file.contentType, :file_name => file.filename
   end
 
   ## PARAMS... {"id"=>"27", "arr_asign"=>"4-0,4-2,4-1"}
   def info_codigo
     #c = Codigo.find(params[:id])
-    cods = Codigo.where(:tipo => TIPO_INFO)
+
+    # asgnatura: indice curso (0-3, 4 = master)
+    asign_selec = []
+    params[:arr_asign].split(',').each do |as|
+      curso = as.split('-').first
+      ord = as.split('-').last
+      if curso.to_i < 4
+        lis = Asignatura.where(:curso => curso.to_i, :titulo => 'ing_informatica')
+        asign_selec << lis[ord.to_i].id
+      else
+        lis = Asignatura.where(:titulo => 'master_i2tic')
+        asign_selec << lis[ord.to_i].id
+      end
+    end
+
     messages = []
 
+    cods = Codigo.where(:tipo => TIPO_INFO, :asignatura_id => asign_selec)
     cods.each do |c|
-      # todo comprobar asignatura
       messages << {:asignatura => c.asignatura.nombre, :texto => c.informacion}
     end
-    arr_assign = params[:id]
 
-    p messages
     respond_to do |format|
       format.json { render json: messages, status: :ok }
     end

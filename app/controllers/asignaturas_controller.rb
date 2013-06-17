@@ -80,4 +80,11 @@ class AsignaturasController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def array_asignatura
+    aa = Asignatura.all.group_by{|x| x.titulo}.map{|a| {a.first => a.last.group_by{|c| c.curso}}}
+    respond_to do |format|
+      format.json  { render json: aa.to_json, status: :ok }
+    end
+  end
 end

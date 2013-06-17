@@ -9,6 +9,7 @@
 #  tipo          :string(255)
 #  asignatura_id :integer
 #  informacion   :text
+#  filename      :string(255)
 #
 
 class Codigo < ActiveRecord::Base

@@ -162,6 +162,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   jquery-ui-rails
+  mime-types
   mini_magick
   mongoid
   mongoid-grid_fs

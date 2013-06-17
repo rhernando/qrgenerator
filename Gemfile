@@ -34,6 +34,8 @@ gem 'jquery-ui-rails'
 
 gem 'rqrcode-rails3'
 
+gem 'mime-types', :require => 'mime/types'
+
 gem 'devise'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
