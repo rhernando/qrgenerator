@@ -128,22 +128,13 @@ class CodigosController < ApplicationController
     send_data file.data, :type => file.contentType, :file_name => file.filename
   end
 
-  ## PARAMS... {"id"=>"27", "arr_asign"=>"4-0,4-2,4-1"}
   def info_codigo
     #c = Codigo.find(params[:id])
 
     # asgnatura: indice curso (0-3, 4 = master)
     asign_selec = []
     params[:arr_asign].split(',').each do |as|
-      curso = as.split('-').first
-      ord = as.split('-').last
-      if curso.to_i < 4
-        lis = Asignatura.where(:curso => curso.to_i, :titulo => 'ing_informatica')
-        asign_selec << lis[ord.to_i].id
-      else
-        lis = Asignatura.where(:titulo => 'master_i2tic')
-        asign_selec << lis[ord.to_i].id
-      end
+      asign_selec << Asignatura.find(as).id
     end
 
     messages = []

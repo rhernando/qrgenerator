@@ -1,4 +1,6 @@
 class AsignaturasController < ApplicationController
+  skip_before_filter :authenticate_user!, :only => [:array_asignatura]
+
   # GET /asignaturas
   # GET /asignaturas.json
   def index
@@ -82,7 +84,7 @@ class AsignaturasController < ApplicationController
   end
 
   def array_asignatura
-    aa = Asignatura.all.group_by{|x| x.titulo}.map{|a| {a.first => a.last.group_by{|c| c.curso}}}
+    aa = Asignatura.all.group_by{|x| x.titulo}.map{|a| {:titulo => I18n.t("asignaturas.#{a.first}"), :cursos => a.last.group_by{|c| c.curso}.map{|s| {:curso => s.first, :asignaturas => s.last}}}}
     respond_to do |format|
       format.json  { render json: aa.to_json, status: :ok }
     end
