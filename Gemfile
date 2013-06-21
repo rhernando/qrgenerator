@@ -7,6 +7,8 @@ gem 'rails', '3.2.8'
 
 gem 'mysql2'
 
+gem 'yaml_db'
+
 gem "mongoid"
 gem "bson_ext"
 

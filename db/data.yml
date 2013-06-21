@@ -1,0 +1,698 @@
+
+---
+asignaturas:
+  columns:
+  - id
+  - curso
+  - nombre
+  - titulo
+  - created_at
+  - updated_at
+  - code
+  - descripcion
+  records: 
+  - - 3
+    - 1
+    - Dirección y gestión de proyectos científicos y tecnológicos
+    - master_i2tic
+    - 2013-06-01 17:11:45.000000000 Z
+    - 2013-06-01 17:11:45.000000000 Z
+    - PROY
+    - ''
+  - - 4
+    - 1
+    - Cálculo intensivo y manejo de datos a gran escala
+    - master_i2tic
+    - 2013-06-01 17:12:17.000000000 Z
+    - 2013-06-01 17:12:17.000000000 Z
+    - COMP
+    - ''
+  - - 5
+    - 1
+    - Iniciación a la investigación y la innovación [estancia en grupo de investigación
+      / prácticas en empresa]
+    - master_i2tic
+    - 2013-06-01 17:13:27.000000000 Z
+    - 2013-06-01 17:13:27.000000000 Z
+    - I3
+    - ''
+  - - 6
+    - 1
+    - Trabajo de fin de máster
+    - master_i2tic
+    - 2013-06-01 17:13:44.000000000 Z
+    - 2013-06-01 17:13:44.000000000 Z
+    - TFM
+    - ''
+  - - 7
+    - 1
+    - ! 'Aprendizaje Automático: teoría y aplicaciones'
+    - master_i2tic
+    - 2013-06-01 17:14:01.000000000 Z
+    - 2013-06-01 17:14:01.000000000 Z
+    - AA
+    - ''
+  - - 8
+    - 1
+    - Recuperación de Información
+    - master_i2tic
+    - 2013-06-01 17:14:13.000000000 Z
+    - 2013-06-01 17:14:13.000000000 Z
+    - IR
+    - ''
+  - - 9
+    - 1
+    - Métodos bayesianos aplicados
+    - master_i2tic
+    - 2013-06-01 17:14:31.000000000 Z
+    - 2013-06-01 17:14:31.000000000 Z
+    - BAYES
+    - ''
+  - - 10
+    - 1
+    - Procesamiento de información temporal
+    - master_i2tic
+    - 2013-06-01 17:14:52.000000000 Z
+    - 2013-06-01 17:14:52.000000000 Z
+    - TIP
+    - ''
+  - - 11
+    - 1
+    - Minería Web
+    - master_i2tic
+    - 2013-06-01 17:15:06.000000000 Z
+    - 2013-06-01 17:15:06.000000000 Z
+    - WM
+    - ''
+  - - 12
+    - 1
+    - Procesamiento de señales biomédicas y sus aplicaciones
+    - master_i2tic
+    - 2013-06-01 17:15:37.000000000 Z
+    - 2013-06-01 17:15:37.000000000 Z
+    - BIOM
+    - ''
+  - - 13
+    - 1
+    - Neuroinformática
+    - master_i2tic
+    - 2013-06-01 17:15:57.000000000 Z
+    - 2013-06-01 17:15:57.000000000 Z
+    - NEUROI
+    - ''
+  - - 14
+    - 1
+    - Computación Bioinspirada
+    - master_i2tic
+    - 2013-06-01 17:16:13.000000000 Z
+    - 2013-06-01 17:16:13.000000000 Z
+    - BIOC
+    - ''
+  - - 15
+    - 1
+    - Biodispositivos
+    - master_i2tic
+    - 2013-06-01 17:16:35.000000000 Z
+    - 2013-06-01 17:16:35.000000000 Z
+    - BDISP
+    - ''
+  - - 16
+    - 1
+    - Caracterización de redes y topologías biológicas
+    - master_i2tic
+    - 2013-06-01 17:16:54.000000000 Z
+    - 2013-06-01 17:16:54.000000000 Z
+    - RTB
+    - ''
+  - - 17
+    - 1
+    - ! 'Sistemas de información en biomedicina: integración y gestión del conocimiento'
+    - master_i2tic
+    - 2013-06-01 17:17:15.000000000 Z
+    - 2013-06-01 17:17:15.000000000 Z
+    - GCMED
+    - ''
+  - - 18
+    - 1
+    - Procesamiento de imágenes biomédicas y sus aplicaciones
+    - master_i2tic
+    - 2013-06-01 21:57:20.000000000 Z
+    - 2013-06-01 21:57:20.000000000 Z
+    - BIOIMG
+    - ''
+  - - 19
+    - 1
+    - Interacción Persona-Ordenador
+    - master_i2tic
+    - 2013-06-01 21:57:35.000000000 Z
+    - 2013-06-01 21:57:35.000000000 Z
+    - HCI
+    - ''
+  - - 20
+    - 1
+    - Desarrollo de Software Dirigido por Modelos
+    - master_i2tic
+    - 2013-06-01 21:57:51.000000000 Z
+    - 2013-06-01 21:57:51.000000000 Z
+    - MDE
+    - ''
+  - - 21
+    - 1
+    - Computación Ubicua e Inteligencia Ambiental
+    - master_i2tic
+    - 2013-06-01 21:58:18.000000000 Z
+    - 2013-06-01 21:58:18.000000000 Z
+    - UCAMI
+    - ''
+  - - 22
+    - 1
+    - Redes Sociales, Colaboración en Red
+    - master_i2tic
+    - 2013-06-01 21:58:32.000000000 Z
+    - 2013-06-01 21:58:32.000000000 Z
+    - SNCI
+    - ''
+  - - 23
+    - 1
+    - Sistemas Adaptativos y Modelado de Usuario
+    - master_i2tic
+    - 2013-06-01 21:58:47.000000000 Z
+    - 2013-06-01 21:58:47.000000000 Z
+    - ASUM
+    - ''
+  - - 24
+    - 1
+    - Planificación y evaluación de prestaciones
+    - master_i2tic
+    - 2013-06-01 21:59:08.000000000 Z
+    - 2013-06-01 21:59:08.000000000 Z
+    - PPE
+    - ''
+  - - 25
+    - 1
+    - Sistemas reconfigurables avanzados
+    - master_i2tic
+    - 2013-06-01 21:59:29.000000000 Z
+    - 2013-06-01 21:59:29.000000000 Z
+    - ARS
+    - ''
+  - - 26
+    - 1
+    - Comunicaciones inalámbricas de banda ancha
+    - master_i2tic
+    - 2013-06-01 22:00:10.000000000 Z
+    - 2013-06-01 22:00:10.000000000 Z
+    - BWLAN
+    - ''
+  - - 27
+    - 1
+    - Sistemas de comunicaciones de altas prestaciones
+    - master_i2tic
+    - 2013-06-01 22:00:36.000000000 Z
+    - 2013-06-01 22:00:36.000000000 Z
+    - HPRS
+    - ''
+  - - 28
+    - 1
+    - Aceleración de algoritmos en sistemas heterogéneos
+    - master_i2tic
+    - 2013-06-01 22:00:55.000000000 Z
+    - 2013-06-01 22:00:55.000000000 Z
+    - HSA
+    - ''
+  - - 29
+    - 1
+    - Plataformas de computación en un chip
+    - master_i2tic
+    - 2013-06-01 22:01:22.000000000 Z
+    - 2013-06-01 22:01:22.000000000 Z
+    - CCP
+    - ''
+  - - 30
+    - 1
+    - Introducción al análisis de secuencias de vídeo
+    - master_i2tic
+    - 2013-06-01 22:01:42.000000000 Z
+    - 2013-06-01 22:01:42.000000000 Z
+    - VSA
+    - ''
+  - - 31
+    - 1
+    - Procesamiento de audio y voz para biometría y seguridad
+    - master_i2tic
+    - 2013-06-01 22:02:39.000000000 Z
+    - 2013-06-01 22:02:39.000000000 Z
+    - AVBS
+    - ''
+  - - 32
+    - 1
+    - Biometría
+    - master_i2tic
+    - 2013-06-01 22:02:56.000000000 Z
+    - 2013-06-01 22:02:56.000000000 Z
+    - BIOMET
+    - ''
+  - - 33
+    - 1
+    - Tecnologías de alta frecuencia para sistemas de comunicaciones
+    - master_i2tic
+    - 2013-06-01 22:03:16.000000000 Z
+    - 2013-06-01 22:03:16.000000000 Z
+    - CSHF
+    - ''
+  - - 34
+    - 1
+    - Técnicas de análisis de secuencias vídeo para videovigilancia
+    - master_i2tic
+    - 2013-06-01 22:03:58.000000000 Z
+    - 2013-06-01 22:03:58.000000000 Z
+    - SAVT
+    - ''
+  - - 35
+    - 4
+    - Fundamentos de Criptografía y Seguridad Informática
+    - ing_informatica
+    - 2013-06-01 22:04:23.000000000 Z
+    - 2013-06-01 22:06:10.000000000 Z
+    - CRIPTO
+    - ''
+  - - 36
+    - 4
+    - Arquitectura de Sistemas Paralelos
+    - ing_informatica
+    - 2013-06-01 22:05:58.000000000 Z
+    - 2013-06-01 22:05:58.000000000 Z
+    - PARQ
+    - ''
+  - - 37
+    - 4
+    - Ampliación de Programación
+    - ing_informatica
+    - 2013-06-01 22:06:29.000000000 Z
+    - 2013-06-01 22:06:29.000000000 Z
+    - PAMP
+    - ''
+  - - 38
+    - 4
+    - Diseño y Análisis de Algoritmos
+    - ing_informatica
+    - 2013-06-01 22:06:57.000000000 Z
+    - 2013-06-01 22:06:57.000000000 Z
+    - AALG
+    - ''
+  - - 39
+    - 4
+    - Introducción a la Programación de Videojuegos y Gráficos
+    - ing_informatica
+    - 2013-06-01 22:07:41.000000000 Z
+    - 2013-06-01 22:07:41.000000000 Z
+    - VGP
+    - ''
+  - - 40
+    - 4
+    - ! 'Tratamiento de Señales Multimedia I: Señales Visuales'
+    - ing_informatica
+    - 2013-06-01 22:08:05.000000000 Z
+    - 2013-06-01 22:08:05.000000000 Z
+    - MMVS
+    - ''
+  - - 41
+    - 4
+    - Desarrollo de Procesadores y Sistemas Específicos
+    - ing_informatica
+    - 2013-06-01 22:08:27.000000000 Z
+    - 2013-06-01 22:10:35.000000000 Z
+    - SSPD
+    - ''
+  - - 42
+    - 4
+    - Organización de empresas tecnológicas
+    - ing_informatica
+    - 2013-06-01 22:08:45.000000000 Z
+    - 2013-06-01 22:08:45.000000000 Z
+    - EMP
+    - ''
+  - - 43
+    - 4
+    - Neurocomputación
+    - ing_informatica
+    - 2013-06-01 22:09:01.000000000 Z
+    - 2013-06-01 22:09:01.000000000 Z
+    - NEURO
+    - ''
+  - - 44
+    - 4
+    - Búsqueda y Minería de Información
+    - ing_informatica
+    - 2013-06-01 22:09:22.000000000 Z
+    - 2013-06-01 22:09:22.000000000 Z
+    - BMINF
+    - ''
+  - - 45
+    - 4
+    - Desarrollo de Aplicaciones Multimedia y Multimodales
+    - ing_informatica
+    - 2013-06-01 22:09:38.000000000 Z
+    - 2013-06-01 22:09:38.000000000 Z
+    - MMAP
+    - ''
+  - - 46
+    - 4
+    - Plataformas para Sistemas Empotrados
+    - ing_informatica
+    - 2013-06-01 22:09:55.000000000 Z
+    - 2013-06-01 22:10:19.000000000 Z
+    - ESP
+    - ''
+  - - 47
+    - 4
+    - Desarrollo de Aplicaciones para Dispositivos Móviles
+    - ing_informatica
+    - 2013-06-01 22:10:06.000000000 Z
+    - 2013-06-01 22:10:06.000000000 Z
+    - MOV
+    - ''
+  - - 48
+    - 3
+    - Sistemas informáticos I
+    - ing_informatica
+    - 2013-06-01 22:11:12.000000000 Z
+    - 2013-06-01 22:11:12.000000000 Z
+    - SI1
+    - ''
+  - - 49
+    - 3
+    - Arquitectura de ordenadores
+    - ing_informatica
+    - 2013-06-01 22:11:24.000000000 Z
+    - 2013-06-01 22:11:24.000000000 Z
+    - ARQ
+    - ''
+  - - 50
+    - 3
+    - Redes de comunicaciones I
+    - ing_informatica
+    - 2013-06-01 22:11:37.000000000 Z
+    - 2013-06-01 22:11:37.000000000 Z
+    - RC1
+    - ''
+  - - 51
+    - 3
+    - Autómatas y lenguajes
+    - ing_informatica
+    - 2013-06-01 22:11:51.000000000 Z
+    - 2013-06-01 22:11:51.000000000 Z
+    - AUT
+    - ''
+  - - 52
+    - 3
+    - Proyecto de sistemas informáticos
+    - ing_informatica
+    - 2013-06-01 22:12:04.000000000 Z
+    - 2013-06-01 22:12:04.000000000 Z
+    - PSI
+    - ''
+  - - 53
+    - 3
+    - Proyecto de autómatas y lenguajes
+    - ing_informatica
+    - 2013-06-01 22:12:29.000000000 Z
+    - 2013-06-01 22:12:29.000000000 Z
+    - AUTP
+    - ''
+  - - 54
+    - 3
+    - Sistemas informáticos II
+    - ing_informatica
+    - 2013-06-01 22:12:42.000000000 Z
+    - 2013-06-01 22:12:42.000000000 Z
+    - SI2
+    - ''
+  - - 55
+    - 3
+    - Inteligencia artificial
+    - ing_informatica
+    - 2013-06-01 22:12:53.000000000 Z
+    - 2013-06-01 22:12:53.000000000 Z
+    - IA
+    - ''
+  - - 56
+    - 3
+    - Ingeniería del software
+    - ing_informatica
+    - 2013-06-01 22:13:03.000000000 Z
+    - 2013-06-01 22:13:03.000000000 Z
+    - IS
+    - ''
+  - - 57
+    - 3
+    - Proyecto de ingeniería del software
+    - ing_informatica
+    - 2013-06-01 22:13:17.000000000 Z
+    - 2013-06-01 22:13:17.000000000 Z
+    - PIS
+    - ''
+  - - 58
+    - 3
+    - Redes de comunicaciones II
+    - ing_informatica
+    - 2013-06-01 22:13:27.000000000 Z
+    - 2013-06-01 22:13:27.000000000 Z
+    - RC2
+    - ''
+  - - 59
+    - 2
+    - Estructuras de datos
+    - ing_informatica
+    - 2013-06-01 22:14:11.000000000 Z
+    - 2013-06-01 22:14:11.000000000 Z
+    - ED
+    - ''
+  - - 60
+    - 2
+    - Estructuras Discretas y Lógica
+    - ing_informatica
+    - 2013-06-01 22:14:35.000000000 Z
+    - 2013-06-01 22:14:35.000000000 Z
+    - EDL
+    - ''
+  - - 61
+    - 2
+    - Circuitos electrónicos
+    - ing_informatica
+    - 2013-06-01 22:14:53.000000000 Z
+    - 2013-06-01 22:14:53.000000000 Z
+    - CIRC
+    - ''
+  - - 62
+    - 2
+    - Informática y sociedad
+    - ing_informatica
+    - 2013-06-01 22:15:11.000000000 Z
+    - 2013-06-01 22:15:11.000000000 Z
+    - SOC
+    - ''
+  - - 63
+    - 2
+    - Análisis de algoritmos
+    - ing_informatica
+    - 2013-06-01 22:15:26.000000000 Z
+    - 2013-06-01 22:15:26.000000000 Z
+    - ALG
+    - ''
+  - - 64
+    - 2
+    - Sistemas basados en microprocesadores
+    - ing_informatica
+    - 2013-06-01 22:15:36.000000000 Z
+    - 2013-06-01 22:15:36.000000000 Z
+    - MICRO
+    - ''
+  - - 65
+    - 2
+    - Análisis y diseño de software
+    - ing_informatica
+    - 2013-06-01 22:15:47.000000000 Z
+    - 2013-06-01 22:15:47.000000000 Z
+    - SW
+    - ''
+  - - 66
+    - 2
+    - Probabilidad y estadística
+    - ing_informatica
+    - 2013-06-01 22:15:58.000000000 Z
+    - 2013-06-01 22:15:58.000000000 Z
+    - ESTA
+    - ''
+  - - 67
+    - 2
+    - Sistemas operativos
+    - ing_informatica
+    - 2013-06-01 22:16:06.000000000 Z
+    - 2013-06-01 22:16:06.000000000 Z
+    - SO
+    - ''
+  - - 68
+    - 2
+    - Proyecto de análisis y diseño de software
+    - ing_informatica
+    - 2013-06-01 22:16:18.000000000 Z
+    - 2013-06-01 22:16:18.000000000 Z
+    - PSW
+    - ''
+  - - 69
+    - 1
+    - Álgebra
+    - ing_informatica
+    - 2013-06-01 22:16:41.000000000 Z
+    - 2013-06-01 22:16:41.000000000 Z
+    - ALGEB
+    - ''
+  - - 70
+    - 1
+    - Programación I
+    - ing_informatica
+    - 2013-06-01 22:16:52.000000000 Z
+    - 2013-06-01 22:16:52.000000000 Z
+    - PROG1
+    - ''
+  - - 71
+    - 1
+    - Fundamentos de Computadores
+    - ing_informatica
+    - 2013-06-01 22:17:02.000000000 Z
+    - 2013-06-01 22:17:02.000000000 Z
+    - FCOMP
+    - ''
+  - - 72
+    - 1
+    - Seminario-Taller de Software
+    - ing_informatica
+    - 2013-06-01 22:17:16.000000000 Z
+    - 2013-06-01 22:17:16.000000000 Z
+    - STSW
+    - ''
+  - - 73
+    - 1
+    - Seminario-Taller de Hardware
+    - ing_informatica
+    - 2013-06-01 22:17:27.000000000 Z
+    - 2013-06-01 22:17:27.000000000 Z
+    - STHW
+    - ''
+  - - 74
+    - 1
+    - Cálculo I
+    - ing_informatica
+    - 2013-06-01 22:17:37.000000000 Z
+    - 2013-06-01 22:17:37.000000000 Z
+    - CALC1
+    - ''
+  - - 75
+    - 1
+    - Estructura de Computadores
+    - ing_informatica
+    - 2013-06-01 22:17:46.000000000 Z
+    - 2013-06-01 22:17:46.000000000 Z
+    - EC
+    - ''
+  - - 76
+    - 1
+    - Programación II
+    - ing_informatica
+    - 2013-06-01 22:17:57.000000000 Z
+    - 2013-06-01 22:17:57.000000000 Z
+    - PROG2
+    - ''
+  - - 77
+    - 1
+    - Electromagnetismo
+    - ing_informatica
+    - 2013-06-01 22:18:08.000000000 Z
+    - 2013-06-01 22:18:08.000000000 Z
+    - ELEC
+    - ''
+  - - 78
+    - 1
+    - Cálculo II
+    - ing_informatica
+    - 2013-06-01 22:18:18.000000000 Z
+    - 2013-06-01 22:18:18.000000000 Z
+    - CALC2
+    - ''
+  - - 79
+    - 1
+    - Proyecto de Programación
+    - ing_informatica
+    - 2013-06-01 22:18:28.000000000 Z
+    - 2013-06-01 22:18:28.000000000 Z
+    - PPROG
+    - ''
+
+---
+codigos:
+  columns:
+  - id
+  - created_at
+  - updated_at
+  - idfichero
+  - tipo
+  - asignatura_id
+  - informacion
+  - filename
+  records: 
+  - - 27
+    - 2013-06-02 00:32:08.000000000 Z
+    - 2013-06-02 00:32:08.000000000 Z
+    - 
+    - informacion
+    - 19
+    - Seminario 22/5/2013
+    - 
+  - - 28
+    - 2013-06-09 22:25:01.000000000 Z
+    - 2013-06-09 22:25:01.000000000 Z
+    - 51b500bdfa5d810a43000003
+    - imagen
+    - 19
+    - 
+    - 
+  - - 36
+    - 2013-06-17 20:51:55.000000000 Z
+    - 2013-06-17 20:51:55.000000000 Z
+    - 51bf76ebfa5d8129b0000001
+    - video
+    - 4
+    - 
+    - 2012-04-14 16.40.34.mp4
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - hernando.ruben@gmail.com
+    - $2a$10$ObCH03YgTqQnO9F9hcql..sw.9s9rvccIzPmfEGEgJqR2Zdj5fN3e
+    - 
+    - 
+    - 
+    - 11
+    - 2013-06-15 16:53:27.000000000 Z
+    - 2013-06-12 09:29:46.000000000 Z
+    - 127.0.0.1
+    - 127.0.0.1
+    - 2013-03-19 21:27:28.000000000 Z
+    - 2013-06-15 16:53:27.000000000 Z
