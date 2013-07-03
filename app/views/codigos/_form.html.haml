@@ -1,11 +1,54 @@
-= form_for(@codigo) do |f|
-  - if @codigo.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@codigo.errors.count, "error")
-        prohibited this codigo from being saved:
-      %ul
-        - @codigo.errors.full_messages.each do |msg|
-          %li= msg
-  .actions
-    = f.submit
+= form_for :image_form, :url => { :controller => "codigos", :action => :create }, :html => { :method => :post, :id => 'uploadForm', :multipart => true } do |f|
+  %p
+    = label_tag :tipo, "Tipo de recurso"
+    = select_tag :tipo,  options_for_select(Codigo::TIPOS, @codigo.tipo)
+  %p.recurso
+    = label_tag :recurso
+    = f.file_field :upload_data
+  %p
+    - if @codigo.asignatura.present?
+      - name = "#{@codigo.asignatura.nombre} (#{@codigo.asignatura.code})"
+
+    = label_tag :asignatura
+    = text_field_tag :asignatura, name, :class => 'typeahead', :placeholder => I18n.t('codigos.form.asign_ph')
+    = hidden_field_tag :idasignatura
+  .field.info
+    = f.label :informacion, "Información"
+    = f.text_area :informacion, :style => 'width:500px;height:100px;'
+    = f.hidden_field :idcodigo, {:value => @codigo.id}
+
+  %p
+    = submit_tag 'Guardar', :class => 'btn btn-success btn-large'
+
+
+= link_to 'Atrás', codigos_path, :class => 'btn btn-link'
+
+
+:javascript
+  //var autocomplete_items = #{ @asignaturas.to_json };
+  var data = #{asignaturas_categorias(@asignaturas)};
+  $('#asignatura').catcomplete({
+    delay: 0,
+    source: data,
+    select: function(event, ui){
+      $("#idasignatura").val(ui.item.id);
+    }
+    });
+
+  $("#tipo").change(function(){tipo_state();});
+
+  var tipo_state = function(){
+    if ($("#tipo").val() == 'informacion')  {
+      $(".info").show();
+      $(".recurso").hide();
+    }
+    else{
+      $(".info").hide();
+      $(".recurso").show();
+    }
+  }
+
+  $(function(){
+    tipo_state();
+    $("#idasignatura").val(#{@codigo.asignatura.id});
+  });

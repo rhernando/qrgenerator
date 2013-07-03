@@ -55,6 +55,7 @@ class CodigosController < ApplicationController
   # GET /codigos/1/edit
   def edit
     @codigo = Codigo.find(params[:id])
+    @asignaturas = Asignatura.all
   end
 
   # POST /codigos
@@ -62,10 +63,12 @@ class CodigosController < ApplicationController
   def create
     tipo = params[:tipo]
     @codigo = Codigo.new(params[:codigo])
+    @codigo = Codigo.find(params[:image_form][:idcodigo]) if params[:image_form][:idcodigo].present?
+
     @codigo.tipo = tipo
     @codigo.asignatura_id = params[:idasignatura]
 
-    if tipo != TIPO_INFO
+    if tipo != TIPO_INFO && (params[:image_form][:upload_data].present? || @codigo.id.blank?)
       grid_fs = Mongoid::GridFs
       g = grid_fs.put(params[:image_form][:upload_data])
       @codigo.idfichero = g.id.to_s

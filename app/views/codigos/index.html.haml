@@ -7,7 +7,7 @@
     %th
   - @codigos.each do |codigo|
     %tr
-      - as = codigo.asignatura || Asignatura.first
+      - as = codigo.asignatura
       - name = as.nombre
       - name += " (#{as.code})" if as.code.present?
 
@@ -18,8 +18,8 @@
       %td= image_tag codigo_path(codigo, :format => 'jpg'), :width => 100
 
       %td
-        = link_to 'Ver', codigo, :class => 'btn btn-info'
-        = link_to 'Editar', edit_codigo_path(codigo), :class => 'btn btn-inverse'
+        =# link_to 'Ver', codigo, :class => 'btn btn-info'
+        = link_to 'Editar', edit_codigo_path(codigo), :class => 'btn btn-info'
         = link_to 'Eliminar', codigo, method: :delete, data: { confirm: 'Eliminar?' }, :class => 'btn btn-danger'
 %br/
 
