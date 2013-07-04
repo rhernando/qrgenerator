@@ -1,5 +1,5 @@
 class CodigosController < ApplicationController
-  skip_before_filter :authenticate_user!, :only => [:showimage, :info_codigo]
+  skip_before_filter :authenticate_user!, :only => [:showimage, :info_codigo, :show]
 
   TIPO_INFO = 'informacion'
   TIPO_IMG = 'imagen'
@@ -29,11 +29,18 @@ class CodigosController < ApplicationController
       valor_codigo = "ARQEL|#{@codigo.id}|#{@codigo.tipo}|#{file.contentType}|#{@codigo.filename}"
     end
 
+#    data = open(view_context.image_path(codigo_url(@codigo, :format => 'jpg')))
+
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {
+        p 'DATA'
+        p "#{view_context.image_path(codigo_url(@codigo, :format => 'jpg'))}"
+
+        #send_data data, :filename => 'code.jpg', :type => "application/x-download" #render :qrcode => valor_codigo
+      }
       format.json { render json: @codigo }
       format.html
-      format.svg { render :qrcode => valor_codigo, :level => :l, :unit => 10 }
+      format.svg { render :qrcode => valor_codigo, :level => :l, :unit => 10, :offset => 10 }
       format.png { render :qrcode => valor_codigo }
       format.gif { render :qrcode => valor_codigo }
       format.jpeg { render :qrcode => valor_codigo }

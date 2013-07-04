@@ -13,9 +13,12 @@
 
       %td= name
       %td
-        = image_tag imageuploaded_path(codigo.id), :width => 150  if codigo.tipo == CodigosController::TIPO_IMG
+        = link_to imageuploaded_path(codigo.id) do
+          = image_tag imageuploaded_path(codigo.id), :width => 150  if codigo.tipo == CodigosController::TIPO_IMG
         = codigo.tipo if codigo.tipo != CodigosController::TIPO_IMG
-      %td= image_tag codigo_path(codigo, :format => 'jpg'), :width => 100
+      %td
+        = link_to codigo_path(codigo, :format => 'jpg') do
+          = image_tag codigo_path(codigo, :format => 'jpg'), :width => 100
 
       %td
         =# link_to 'Ver', codigo, :class => 'btn btn-info'

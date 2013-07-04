@@ -2,6 +2,13 @@
 %p=# <strong>A</strong>ugmented <strong>R</strong>eality and <strong>Q</strong>r-codes <strong>E</strong>-<strong>L</strong>earning
 
 %p
-  = link_to t('home.asignat'), asignaturas_path, :class => 'btn btn-large btn-info'
+  = link_to asignaturas_path, :class => 'btn btn-large btn-info' do
+    %i.icon-cog.icon-white
+    =t('home.asignat')
+    %i.icon-book.icon-white
+
 %p
-  = link_to t('home.codes'), codigos_path, :class => 'btn btn-large btn-inverse'
+  = link_to codigos_path, :class => 'btn btn-large btn-inverse' do
+    %i.icon-edit.icon-white
+    = t('home.codes')
+    %i.icon-camera.icon-white

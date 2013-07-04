@@ -1,14 +1,18 @@
-= link_to "QR-AR Info", root_path, :class => 'brand'
+= link_to root_path, :class => 'brand' do
+  %i.icon-home.icon-white
+  = "QR-AR Info"
 %ul.nav
   - if user_signed_in?
     %li
-      = link_to 'Salir', destroy_user_session_path, :method=>'delete'
+      = link_to destroy_user_session_path, :method=>'delete' do
+        %i.icon-remove-sign.icon-white
+        = 'Salir'
   - else
     %li
-      = link_to 'Login', new_user_session_path
+      = link_to 'Acceso', new_user_session_path
   - if user_signed_in?
     %li
       =# link_to 'Editar cuenta', edit_user_registration_path
   - else
     %li
-      = link_to 'Sign up', new_user_registration_path
+      = link_to 'Nuevo Usuario', new_user_registration_path
