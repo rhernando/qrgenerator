@@ -33,17 +33,19 @@ class CodigosController < ApplicationController
 
     respond_to do |format|
       format.html {
-        p 'DATA'
-        p "#{view_context.image_path(codigo_url(@codigo, :format => 'jpg'))}"
-
-        #send_data data, :filename => 'code.jpg', :type => "application/x-download" #render :qrcode => valor_codigo
+        qrcode = RQRCode::QRCode.new(valor_codigo, :level => :l, :unit => 10, :offset => 5, :size => 7)
+        svg    = RQRCode::Renderers::SVG::render(qrcode, :level => :l, :unit => 10, :offset => 5, :size => 7)
+        image = MiniMagick::Image.read(svg) { |i| i.format "svg" }
+        image.format :jpg
+        data = image.to_blob
+        send_data data, :filename => "#{params[:id]}.jpg"
       }
       format.json { render json: @codigo }
       format.html
-      format.svg { render :qrcode => valor_codigo, :level => :l, :unit => 10, :offset => 10 }
+      format.svg { render :qrcode => valor_codigo, :level => :m, :unit => 10, :offset => 10, :size => 10 }
       format.png { render :qrcode => valor_codigo }
       format.gif { render :qrcode => valor_codigo }
-      format.jpeg { render :qrcode => valor_codigo }
+      format.jpeg { render :qrcode => valor_codigo, :level => :l, :unit => 10, :offset => 5, :size => 7}
     end
   end
 

@@ -1,10 +1,11 @@
-%h1 Listado de códigos
+%h1 Listado de Recursos
 %table.table.table-striped.table-bordered
   %tr
     %th Asignatura
     %th Recurso
     %th QR Code
-    %th
+    %th Fecha modificación
+    %th Opciones
   - @codigos.each do |codigo|
     %tr
       - as = codigo.asignatura
@@ -17,9 +18,13 @@
           = image_tag imageuploaded_path(codigo.id), :width => 150  if codigo.tipo == CodigosController::TIPO_IMG
         = codigo.tipo if codigo.tipo != CodigosController::TIPO_IMG
       %td
-        = link_to codigo_path(codigo, :format => 'jpg') do
-          = image_tag codigo_path(codigo, :format => 'jpg'), :width => 100
-
+        = image_tag codigo_path(codigo, :format => 'jpg'), :width => 100
+        = link_to codigo_path(codigo) do
+          %span.btn.btn-small.btn-info
+            = 'Descargar'
+            %i.icon-download.icon-white
+      %td
+        =codigo.updated_at.strftime("%m/%d/%Y a las %I:%M%p")
       %td
         =# link_to 'Ver', codigo, :class => 'btn btn-info'
         = link_to 'Editar', edit_codigo_path(codigo), :class => 'btn btn-info'
