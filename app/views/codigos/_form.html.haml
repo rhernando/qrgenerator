@@ -50,5 +50,5 @@
 
   $(function(){
     tipo_state();
-    $("#idasignatura").val(#{@codigo.asignatura.id});
+    $("#idasignatura").val(#{@codigo.asignatura.try(:id)});
   });
