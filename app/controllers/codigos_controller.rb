@@ -78,10 +78,14 @@ class CodigosController < ApplicationController
     @codigo.asignatura_id = params[:idasignatura]
 
     if tipo != TIPO_INFO && (params[:image_form][:upload_data].present? || @codigo.id.blank?)
-      grid_fs = Mongoid::GridFs
-      g = grid_fs.put(params[:image_form][:upload_data])
-      @codigo.idfichero = g.id.to_s
-      @codigo.filename = params[:image_form][:upload_data].original_filename
+      if params[:image_form][:upload_data].present?
+        grid_fs = Mongoid::GridFs
+        g = grid_fs.put(params[:image_form][:upload_data])
+        @codigo.idfichero = g.id.to_s
+        @codigo.filename = params[:image_form][:upload_data].original_filename
+      else
+        @codigo.errors.add(:filename, "debe seleccionar un fichero")
+      end
     else
       @codigo.informacion = params[:image_form][:informacion]
     end
