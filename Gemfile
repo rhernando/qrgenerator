@@ -57,6 +57,8 @@ gem 'devise'
 group :development do
   gem 'annotate'
   gem "letter_opener"
+  gem 'railroady'
+
   #gem 'linecache19', '>= 0.5.13', :git => 'https://github.com/robmathews/linecache19-0.5.13.git'
   #gem 'linecache19', '0.5.13'
   #gem 'ruby-debug-base19x', '>= 0.11.30.pre10'
