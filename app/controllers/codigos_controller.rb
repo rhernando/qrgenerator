@@ -95,6 +95,7 @@ class CodigosController < ApplicationController
         format.html { redirect_to codigos_path, notice: 'Codigo was successfully created.' }
         format.json { render json: @codigo, status: :created, location: @codigo }
       else
+        @asignaturas = Asignatura.all
         format.html { render action: "new" }
         format.json { render json: @codigo.errors, status: :unprocessable_entity }
       end
